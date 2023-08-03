@@ -1,0 +1,14 @@
+# plymouth pre-install hook for Pacman 5 and newer
+
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Type = Package
+Target = *
+
+[Action]
+Description = plymouth: show 33% update progress
+Depends = systemd
+When = PostTransaction
+Exec = /usr/bin/bash -c 'sleep 3 && /usr/bin/plymouth system-update --progress=33'

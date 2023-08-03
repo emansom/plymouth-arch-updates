@@ -1,0 +1,12 @@
+[Unit]
+Description=Show Plymouth System Update Screen
+DefaultDependencies=no
+ConditionKernelCommandLine=!plymouth.enable=0
+ConditionVirtualization=!container
+IgnoreOnIsolate=true
+
+[Service]
+ExecStart=/usr/lib/plymouth/plymouth-system-update-splash
+Type=forking
+KillMode=mixed
+SendSIGKILL=no

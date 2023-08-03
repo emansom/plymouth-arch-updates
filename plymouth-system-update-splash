@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+/usr/bin/plymouthd --mode=updates --pid-file=/run/plymouth/pid --attach-to-session
+/usr/bin/plymouth system-update --progress=1
+/usr/bin/plymouth show-splash

@@ -1,0 +1,14 @@
+# plymouth pre-install hook for Pacman 5 and newer
+
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Type = Package
+Target = *
+
+[Action]
+Description = plymouth: show system update splash
+Depends = systemd
+When = PreTransaction
+Exec = /usr/bin/systemctl start plymouth-system-update-show-splash.service
